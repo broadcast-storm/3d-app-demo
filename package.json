@@ -1,0 +1,22 @@
+{
+  "name": "3d-app",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "node-dev": "vite",
+    "dev": "bunx --bun vite",
+    "build": "bunx --bun vite build",
+    "preview": "bunx --bun vite preview"
+  },
+  "dependencies": {
+    "solid-js": "^1.8.7",
+    "three": "^0.159.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.159.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-solid": "^2.8.0"
+  }
+}
