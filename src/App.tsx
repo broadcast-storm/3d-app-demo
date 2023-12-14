@@ -1,4 +1,5 @@
 import { createSignal, onMount, Ref } from 'solid-js';
+
 import { setupCubeDemo } from './components/cube.demo';
 
 let canvasRef: Ref<HTMLCanvasElement> | undefined;

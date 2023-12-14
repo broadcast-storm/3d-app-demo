@@ -1,6 +1,7 @@
-import { defineConfig } from 'vite';
-import solid from 'vite-plugin-solid';
 import devtools from 'solid-devtools/vite';
+import { defineConfig } from 'vite';
+import glsl from 'vite-plugin-glsl';
+import solid from 'vite-plugin-solid';
 
 export default defineConfig({
     plugins: [
@@ -14,6 +15,7 @@ export default defineConfig({
             },
         }),
         solid(),
+        glsl(),
     ],
     base: '/3d-app-demo',
 });

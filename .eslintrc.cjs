@@ -25,7 +25,7 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['@typescript-eslint', 'solid'],
+    plugins: ['@typescript-eslint', 'simple-import-sort', 'solid'],
     rules: {
         'no-var': 'error',
         'prefer-const': 'warn',
@@ -36,5 +36,8 @@ module.exports = {
             },
         ],
         'no-console': ['warn', { allow: ['warn', 'error'] }],
+
+        'simple-import-sort/imports': 'error',
+        'simple-import-sort/exports': 'error',
     },
 };
