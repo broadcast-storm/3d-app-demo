@@ -1,7 +1,7 @@
 export const ENV_CONFIG = {
-    BASE_URL: import.meta.env.BASE_URL || '/',
+    BASE_URL: import.meta.env.APP_BASE_URL || '/',
     MODE: import.meta.env.MODE || 'development',
-    USE_HASH_ROUTER: import.meta.env.USE_HASH_ROUTER === 'true',
+    USE_HASH_ROUTER: import.meta.env.APP_USE_HASH_ROUTER === 'true',
 } as const;
 
 export const isDevelopment = ENV_CONFIG.MODE === 'development';

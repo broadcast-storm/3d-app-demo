@@ -4,9 +4,12 @@ import { defineConfig, loadEnv } from 'vite';
 import glsl from 'vite-plugin-glsl';
 import solid from 'vite-plugin-solid';
 
+const ENV_VARIABLES_PREFIXES = ['APP_'];
+
 export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, process.cwd(), '');
+    const env = loadEnv(mode, process.cwd(), ENV_VARIABLES_PREFIXES);
     return {
+        envPrefix: ENV_VARIABLES_PREFIXES,
         resolve: {
             alias: {
                 '@': path.resolve(__dirname, './src'),
@@ -25,6 +28,6 @@ export default defineConfig(({ mode }) => {
             solid(),
             glsl(),
         ],
-        base: env.BASE_URL || '/',
+        base: env.APP_BASE_URL || '/',
     };
 });

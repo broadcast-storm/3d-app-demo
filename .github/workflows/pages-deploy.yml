@@ -32,8 +32,8 @@ jobs:
       - name: Build
         run: bun run build
         env:
-          BASE_URL: ${{secrets.BASE_URL}}
-          USE_HASH_ROUTER: ${{secrets.USE_HASH_ROUTER}}
+          APP_BASE_URL: ${{secrets.APP_BASE_URL}}
+          APP_USE_HASH_ROUTER: ${{secrets.APP_USE_HASH_ROUTER}}
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
