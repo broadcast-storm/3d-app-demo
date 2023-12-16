@@ -14,9 +14,7 @@ export function Application() {
         <ErrorBoundary fallback={<div>Something went terribly wrong</div>}>
             <Switch fallback={<div>Not Found</div>}>
                 <Match when={isHashRouter}>
-                    <HashRouter base={ENV_CONFIG.BASE_URL} root={PageLayout}>
-                        {Routes}
-                    </HashRouter>
+                    <HashRouter root={PageLayout}>{Routes}</HashRouter>
                 </Match>
                 <Match when={!isHashRouter}>
                     <Router base={ENV_CONFIG.BASE_URL} root={PageLayout}>
