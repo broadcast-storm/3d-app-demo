@@ -1,11 +1,34 @@
 import * as THREE from 'three';
 import WebGL from 'three/addons/capabilities/WebGL.js';
+import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
+
+function createPanel() {
+    const panel = new GUI({
+        width: 310,
+        container: document.getElementById('canvas-container') || undefined,
+    });
+
+    const folder1 = panel.addFolder('Visibility');
+    const folder2 = panel.addFolder('Activation/Deactivation');
+
+    const settings = {
+        'show model': true,
+        'show skeleton': false,
+        'deactivate all': function () {},
+    };
+
+    folder1.add(settings, 'show model').onChange(() => {});
+    folder1.add(settings, 'show skeleton').onChange(() => {});
+    folder2.add(settings, 'deactivate all');
+}
 
 export const setupCubeDemo = (canvas: HTMLCanvasElement) => {
     if (WebGL.isWebGL2Available() === false) {
         document.body.appendChild(WebGL.getWebGL2ErrorMessage());
         return;
     }
+
+    createPanel();
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, 600 / 400, 0.1, 1000);
