@@ -9,6 +9,7 @@ import { PageLayout } from '@/shared/ui/page-layout';
 import { Routes } from './Router';
 
 export function Application() {
+    console.log(ENV_CONFIG);
     return (
         <ErrorBoundary fallback={<div>Something went terribly wrong</div>}>
             <Switch fallback={<div>Not Found</div>}>
