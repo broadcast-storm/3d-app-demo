@@ -16,11 +16,13 @@
         "build-storybook": "bunx storybook build"
     },
     "dependencies": {
+        "@motionone/solid": "^10.16.4",
         "@solidjs/router": "^0.10.3",
         "solid-js": "^1.8.7",
         "three": "^0.159.0"
     },
     "devDependencies": {
+        "@motionone/types": "^10.16.3",
         "@storybook/addon-essentials": "^7.6.5",
         "@storybook/addon-interactions": "^7.6.5",
         "@storybook/addon-links": "^7.6.5",

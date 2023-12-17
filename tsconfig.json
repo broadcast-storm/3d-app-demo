@@ -22,7 +22,10 @@
         "noFallthroughCasesInSwitch": true,
         "baseUrl": ".",
         "paths": {
-            "@/*": ["src/*"]
+            "@/*": ["src/*"],
+            "@motionone/solid": [
+                "./node_modules/@motionone/solid/dist/types/index.d.ts"
+            ]
         }
     },
     "include": ["src"],
