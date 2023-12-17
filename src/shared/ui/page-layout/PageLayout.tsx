@@ -1,5 +1,6 @@
 import { A } from '@solidjs/router';
 import type { Component, ComponentProps } from 'solid-js';
+import { Suspense } from 'solid-js';
 
 import { ROUTES } from '@/shared/config/routes';
 import { Button } from '@/shared/ui/button';
@@ -19,6 +20,6 @@ export const PageLayout: Component<ComponentProps<'div'>> = (props) => (
             </A>
         </nav>
         <Button label="Hello" />
-        {props.children}
+        <Suspense fallback={<div>Loading...</div>}>{props.children}</Suspense>
     </div>
 );

@@ -13,7 +13,7 @@ export function Application() {
     return (
         <ErrorBoundary fallback={<div>Something went terribly wrong</div>}>
             <CurrentRouter
-                preload={true}
+                preload
                 root={PageLayout}
                 base={!isHashRouter ? ENV_CONFIG.BASE_URL : undefined}>
                 {Routes}
