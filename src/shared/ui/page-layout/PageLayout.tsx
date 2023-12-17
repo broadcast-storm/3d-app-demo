@@ -2,6 +2,7 @@ import { A } from '@solidjs/router';
 import type { Component, ComponentProps } from 'solid-js';
 
 import { ROUTES } from '@/shared/config/routes';
+import { Button } from '@/shared/ui/button';
 
 export const PageLayout: Component<ComponentProps<'div'>> = (props) => (
     <div class="h-screen flex flex-col gap-2 justify-center items-center bg-slate-400">
@@ -17,6 +18,7 @@ export const PageLayout: Component<ComponentProps<'div'>> = (props) => (
                 Settings
             </A>
         </nav>
+        <Button label="Hello" />
         {props.children}
     </div>
 );
