@@ -5,7 +5,8 @@ const config: StorybookConfig = {
     addons: [
         '@storybook/addon-links',
         '@storybook/addon-essentials',
-        '@storybook/addon-interactions',
+        '@chromatic-com/storybook',
+        // '@storybook/addon-interactions',
     ],
     framework: {
         name: 'storybook-solidjs-vite',
@@ -15,6 +16,7 @@ const config: StorybookConfig = {
         autodocs: 'tag',
     },
     core: {
+        builder: '@storybook/builder-vite',
         disableTelemetry: true,
     },
 };

@@ -15,6 +15,10 @@ export const Button: Component<Props> = (props) => {
             press={{ scale: 0.9 }}
             class={cn(
                 'px-4 py-2 rounded-md bg-slate-950 text-white',
+                {
+                    'text-lg': props.size === 'large',
+                    'text-sm': props.size === 'small',
+                },
                 props.class,
             )}>
             {props.label}

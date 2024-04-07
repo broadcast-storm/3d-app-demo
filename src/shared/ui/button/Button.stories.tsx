@@ -2,33 +2,29 @@ import type { Meta, StoryObj } from 'storybook-solidjs';
 
 import { Button } from './Button';
 
-const meta = {
+const meta: Meta<typeof Button> = {
     title: 'Ui/Button',
     component: Button,
     tags: ['autodocs'],
     argTypes: {
-        // backgroundColor: { control: 'color' },
+        label: { control: 'text' },
+        size: { control: 'select', options: ['small', 'large'] },
     },
-} satisfies Meta<typeof Button>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        primary: true,
+        size: 'large',
         label: 'Primary Button',
-    },
-};
-
-export const Secondary: Story = {
-    args: {
-        label: 'Secondary Button',
     },
 };
 
 export const Large: Story = {
     args: {
+        ...Primary.args,
         size: 'large',
         label: 'Large Button',
     },
@@ -36,6 +32,7 @@ export const Large: Story = {
 
 export const Small: Story = {
     args: {
+        ...Primary.args,
         size: 'small',
         label: 'Small Button',
     },
